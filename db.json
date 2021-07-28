@@ -1,0 +1,231 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookTitle": "Heat Transfer",
+      "bookAuthor": "Hari",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "category": "Chemical Engineering"
+    },
+    {
+      "id": 2,
+      "bookTitle": "Thermodynamics",
+      "bookAuthor": "Vijay",
+      "min": 37,
+      "reads": "2.3k",
+      "image": "book_image2.png",
+      "category": "General Engineering"
+    },
+    {
+      "id": 4,
+      "bookTitle": "Mass Transfer",
+      "bookAuthor": "Anand",
+      "min": 121,
+      "reads": "3.8k",
+      "image": "book_image4.png",
+      "category": "Chemical Engineering"
+    },
+    {
+      "id": 5,
+      "bookTitle": "Process Dynamics",
+      "bookAuthor": "Prashant",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image5.png",
+      "category": "Chemical Engineering"
+    },
+    {
+      "id": 3,
+      "bookTitle": "Fluid Mechanics",
+      "bookAuthor": "Rohan",
+      "min": 42,
+      "reads": "1.2k",
+      "image": "book_image3.png",
+      "category": "Science"
+    },
+    {
+      "id": 6,
+      "bookTitle": "Zoology",
+      "bookAuthor": "Vikram",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "category": "Medicine"
+    },
+    {
+      "id": 7,
+      "bookTitle": "Neurology",
+      "bookAuthor": "Prashant",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "category": "Medicine"
+    },
+    {
+      "id": 8,
+      "bookAuthor": "anand",
+      "bookTitle": "carroms",
+      "category": "Indoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 9,
+      "bookAuthor": "vishal",
+      "bookTitle": "golf",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 10,
+      "bookTitle": "constitution",
+      "bookAuthor": "prasad",
+      "category": "politics",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 11,
+      "bookTitle": "tennis",
+      "bookAuthor": "rajendra",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 12,
+      "bookTitle": "fone",
+      "bookAuthor": "karthik",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 13,
+      "bookTitle": "chess",
+      "bookAuthor": "watson",
+      "category": "Indoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 14,
+      "bookTitle": "baseball",
+      "bookAuthor": "Ashish",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 15,
+      "bookTitle": "basketball",
+      "bookAuthor": "Uday",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 16,
+      "bookTitle": "swimming",
+      "bookAuthor": "ashutosh",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    },
+    {
+      "id": 17,
+      "bookTitle": "jogging",
+      "bookAuthor": "virat",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png"
+    }
+  ],
+  "userBooks": [
+    {
+      "id": 15,
+      "bookTitle": "basketball",
+      "bookAuthor": "Uday",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "status": "finished"
+    },
+    {
+      "id": 4,
+      "bookTitle": "Mass Transfer",
+      "bookAuthor": "Anand",
+      "min": 121,
+      "reads": "3.8k",
+      "image": "book_image4.png",
+      "category": "Chemical Engineering",
+      "status": "currentlyReading"
+    },
+    {
+      "id": 1,
+      "bookTitle": "Heat Transfer",
+      "bookAuthor": "Hari",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "category": "Chemical Engineering",
+      "status": "currentlyReading"
+    },
+    {
+      "id": 13,
+      "bookTitle": "chess",
+      "bookAuthor": "watson",
+      "category": "Indoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "status": "currentlyReading"
+    },
+    {
+      "id": 9,
+      "bookAuthor": "vishal",
+      "bookTitle": "golf",
+      "category": "Outdoor Sports",
+      "min": 20,
+      "reads": "0.7k",
+      "image": "book_image1.png",
+      "status": "currentlyReading"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server1",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server4",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

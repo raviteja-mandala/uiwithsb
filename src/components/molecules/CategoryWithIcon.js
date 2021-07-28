@@ -4,7 +4,11 @@ import Engineering from "@material-ui/icons/Engineering";
 import LocalHospital from "@material-ui/icons/LocalHospital";
 import Science from "@material-ui/icons/Science";
 import SportsCricket from "@material-ui/icons/SportsCricket";
+import PropTypes from "prop-types";
 import React from "react";
+import { GiFactory , GiChessKing } from "react-icons/gi";
+import { FaChess } from "react-icons/fa";
+
 
 const useStyles = makeStyles((theme) => ({
   iconFont: {
@@ -23,8 +27,12 @@ function CategoryWithIcon(props) {
   const classes = useStyles();
   var IconElement;
   switch (props.message) {
-    case "sports":
+    case "Outdoor Sports":
       IconElement = SportsCricket;
+      break;
+
+    case "Indoor Sports":
+      IconElement = FaChess;
       break;
 
     case "Science":
@@ -33,14 +41,18 @@ function CategoryWithIcon(props) {
 
     case "General Engineering":
       IconElement = Engineering;
-
       break;
+
     case "Chemical Engineering":
-      IconElement = Engineering;
+      IconElement = GiFactory;
       break;
 
     case "Medicine":
       IconElement = LocalHospital;
+      break;
+    
+      case "politics":
+      IconElement = GiChessKing;
       break;
 
     default:
@@ -55,5 +67,10 @@ function CategoryWithIcon(props) {
     </div>
   );
 }
+
+CategoryWithIcon.propTypes = {
+    message : PropTypes.string
+    
+  };
 
 export default CategoryWithIcon;

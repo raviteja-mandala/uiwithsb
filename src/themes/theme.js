@@ -21,7 +21,7 @@ const theme = createMuiTheme({
   typography : {
       fontFamily : 'Raleway',
       fontSize : {
-          cardIconsFont : 15,
+          cardIconsFont : 14,
           reads : 13,
           bookStatusFontSize : 20,
           category : 16,

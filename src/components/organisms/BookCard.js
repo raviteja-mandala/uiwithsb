@@ -149,7 +149,7 @@ const BookCard = (props) => {
             onClick={() => changeStatusOfBook(props.onchangestate, props.book)}
             variant="contained"
             className={
-              props.myLibrary === true
+              props.changeStatus === true
                 ? classes.colorButton
                 : classes.hideButton
             }
@@ -168,7 +168,7 @@ const BookCard = (props) => {
           >
             Add to library
           </Button>
-          <Button
+          {/* <Button
             id="removeFromLibrary"
             onClick={() => changeStatusOfBook(props.onremove, props.book)}
             variant="contained"
@@ -179,7 +179,7 @@ const BookCard = (props) => {
             }
           >
             Remove from library
-          </Button>
+          </Button> */}
         </Grid>
       </Grid>
     </Grid>
@@ -188,6 +188,7 @@ const BookCard = (props) => {
 
 BookCard.propTypes = {
   myLibrary: PropTypes.bool,
+  changeStatus : PropTypes.bool,
   onremove: PropTypes.func,
   onchangestate: PropTypes.func,
   onaddtolibrary: PropTypes.func,
@@ -203,6 +204,7 @@ BookCard.propTypes = {
 
 BookCard.defaultProps = {
   myLibrary: true,
+  changeStatus : true
 };
 
 export default BookCard;

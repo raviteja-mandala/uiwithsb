@@ -1,5 +1,4 @@
 import { Box, makeStyles } from "@material-ui/core";
-import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
@@ -19,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: props.width > 1110 ? "row" : "column",
+    position : 'relative'
   }),
 
   showIcon: {
@@ -44,15 +44,16 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "8px",
   },
 
-  searchBox: {
-    position: "fixed",
+  searchBox: (props) => ({
+    position: "absolute",
     width: "300px",
-    top: 10,
-    left: 620,
+    top: 12,
+    left: props.width > 1110 ? 250 : props.width*(2/3),
     display: "none",
     backgroundColor: "#ffffff",
+    opacity : 1,
     zIndex: 3,
-  },
+  }),
 
   overlay: {
     position: "fixed",
@@ -67,6 +68,8 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     cursor: "pointer" /* Add a pointer on hover */,
   },
+
+  
 }));
 
 function BlinkistHeader(props) {
@@ -152,9 +155,5 @@ function BlinkistHeader(props) {
     </Box>
   );
 }
-
-BlinkistHeader.propTypes = {
-  width: PropTypes.number,
-};
 
 export default BlinkistHeader;

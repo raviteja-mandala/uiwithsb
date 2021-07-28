@@ -11,8 +11,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 0,
     height: 100,
     display: "block",
-
-    //  zIndex : 2
   },
   blinkistbody: {
     flex: 1,

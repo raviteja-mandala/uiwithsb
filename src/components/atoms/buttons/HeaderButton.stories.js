@@ -13,9 +13,10 @@ export default {
     ),
   ],
   argTypes: {
-    state: { control: "text" },
-    link: { control: "text" },
     children: { control: "text" },
+    onlinkclick : { action : "clicked!" , table:{
+      disable:true
+    }}
   },
 };
 
@@ -23,7 +24,5 @@ const Template = (args) => <HeaderButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  state: "true",
-  link: "#",
   children: "hello",
 };

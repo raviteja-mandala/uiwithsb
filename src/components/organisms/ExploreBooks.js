@@ -68,7 +68,7 @@ function ExploreBooks(props) {
       <Grid container className={classes.container}>
         {bookArray.map((book) => {
           console.log("z--" + book.id + "cat " + category);
-          if (book.category === category && !userBooks.includes(book.id)) {
+          if (book.category === category) {  //&& !userBooks.includes(book.id)
             console.log("inside loop" + book.id);
             return (
               <Grid item xs={4}>
@@ -77,7 +77,8 @@ function ExploreBooks(props) {
                   onaddtolibrary={(bk) => {
                     addBookToLibrary(bk);
                   }}
-                  myLibrary={false}
+                  myLibrary={userBooks.includes(book.id) ? true : false}
+                  changeStatus={false}
                 ></BookCard>
               </Grid>
             );

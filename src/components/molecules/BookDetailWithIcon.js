@@ -1,5 +1,6 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   timer: {
@@ -25,5 +26,12 @@ function BookDetailWithIcon(props) {
     </div>
   );
 }
+
+
+BookDetailWithIcon.propTypes = {
+  message : PropTypes.string,
+  icon : PropTypes.element
+};
+
 
 export default BookDetailWithIcon;

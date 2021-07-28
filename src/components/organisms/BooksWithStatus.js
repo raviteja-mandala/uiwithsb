@@ -132,6 +132,7 @@ function BooksWithStatus() {
                 <BookCard
                   book={book}
                   myLibrary={true}
+                  changeStatus={true}
                   onremove={(bk) => {
                     removeFromLibrary(bk);
                   }}

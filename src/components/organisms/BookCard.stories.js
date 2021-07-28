@@ -1,5 +1,7 @@
 import React from "react";
 import BookCard from "./BookCard";
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "../../themes/theme";
 
 export default {
   title: "Components/organisms/BookCard",
@@ -19,9 +21,9 @@ export default {
 };
 
 const Template = (args) => (
-  // <ThemeProvider theme={theme}>
+   <ThemeProvider theme={theme}>
   <BookCard {...args} />
-  // </ThemeProvider>
+   </ThemeProvider>
 );
 
 export const LibraryBookCard = Template.bind({});

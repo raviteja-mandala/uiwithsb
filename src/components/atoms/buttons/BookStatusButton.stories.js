@@ -7,7 +7,9 @@ export default {
   title: "Components/atoms/buttons/BookStatusButton",
   component: BookStatusButton,
   argTypes: {
-    state: { options: ["currentlyReading", "finished"], control: "radio" },
+    state : { table:{
+      disable:true
+    }},
     buttonStyles: {
       options: ["bookStatusButtonStyle", "bookStatusButtonActive"],
       control: "select",
@@ -19,7 +21,11 @@ export default {
       ],
       control: "select",
     },
-    children: { control: "text" },
+    children: { options: ["currentlyReading", "finished"],
+    control: "select",},
+    clickfunc : {action : 'submitted', table:{
+      disable:true
+    }}
   },
 };
 
@@ -31,6 +37,5 @@ const Template = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  state: "currentlyReading",
   children: "currentlyReading",
 };
