@@ -1,11 +1,11 @@
 import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
-import theme from "../themes/theme";
 import BlinkistHeader from "../components/organisms/BlinkistHeader";
 import BooksWithStatus from "../components/organisms/BooksWithStatus";
 import useWindowSize from "../components/organisms/useWindowSize";
 import WindowContext from "../components/organisms/WindowContext";
 import MainTemplate from "../components/templates/MainTemplate";
+import theme from "../themes/theme";
 
 function MainPage() {
   const dimensions = useWindowSize({});
