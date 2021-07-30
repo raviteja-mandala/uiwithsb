@@ -95,10 +95,6 @@ function BlinkistHeader(props) {
     setIsOpen(false);
   },[]);
 
-  const getSearchIcon = () => {return BsSearch;};
-
-  const SearchIcon = useMemo(() => getSearchIcon(), []);
-
   const onSearchClose = () => {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("sbox").style.display = "none";
@@ -111,7 +107,7 @@ function BlinkistHeader(props) {
         <span className={classes.bigFontForHeader}>Blinkist</span>
       </HeaderButton>
       <HeaderButton onlinkclick={onSearchClick}>
-         <SearchIcon/>
+         <BsSearch/>
       </HeaderButton>
 
       <Box id="sbox" className={classes.searchBox}>
