@@ -8,6 +8,7 @@ import SimpleHeaderButton from "../atoms/buttons/SimpleHeaderButton";
 import ExploreDialog from "./ExploreDialog";
 import SearchBox from "./SearchBox";
 import WindowContext from "./WindowContext";
+import { useCallback , useMemo} from "react";
 
 const useStyles = makeStyles((theme) => ({
   hideIcon: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: props.width > 1110 ? "row" : "column",
-    position : 'relative'
+    position: "relative",
   }),
 
   showIcon: {
@@ -48,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: "300px",
     top: 12,
-    left: props.width > 1110 ? 250 : props.width*(2/3),
+    left: props.width > 1110 ? 250 : props.width * (2 / 3),
     display: "none",
     backgroundColor: "#ffffff",
-    opacity : 1,
+    opacity: 1,
     zIndex: 3,
   }),
 
@@ -68,8 +69,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     cursor: "pointer" /* Add a pointer on hover */,
   },
-
-  
 }));
 
 function BlinkistHeader(props) {
@@ -89,11 +88,16 @@ function BlinkistHeader(props) {
     setIsOpen(state);
   };
 
-  const onSearchClick = () => {
+  const onSearchClick = useCallback(
+    () => {
     document.getElementById("overlay").style.display = "block";
     document.getElementById("sbox").style.display = "block";
     setIsOpen(false);
-  };
+  },[]);
+
+  const getSearchIcon = () => {return BsSearch;};
+
+  const SearchIcon = useMemo(() => getSearchIcon(), []);
 
   const onSearchClose = () => {
     document.getElementById("overlay").style.display = "none";
@@ -107,7 +111,7 @@ function BlinkistHeader(props) {
         <span className={classes.bigFontForHeader}>Blinkist</span>
       </HeaderButton>
       <HeaderButton onlinkclick={onSearchClick}>
-        <BsSearch></BsSearch>
+         <SearchIcon/>
       </HeaderButton>
 
       <Box id="sbox" className={classes.searchBox}>

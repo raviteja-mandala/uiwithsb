@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HeaderButton(props) {
+  console.log('abc123--4');
   const classes = useStyles();
 
   const handleCloseLink = () => {
@@ -39,4 +40,4 @@ function HeaderButton(props) {
   );
 }
 
-export default HeaderButton;
+export default React.memo(HeaderButton);
