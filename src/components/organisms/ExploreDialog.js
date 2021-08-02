@@ -169,13 +169,6 @@ function ExploreDialog(props) {
       </Box>
     </Box>
   );
-
-  {
-    /* </DialogContent>
-            
-        </Dialog>
-        </ThemeProvider> */
-  }
 }
 
 export default ExploreDialog;
