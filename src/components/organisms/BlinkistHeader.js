@@ -1,5 +1,5 @@
 import { Box, makeStyles } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import blinkistHeaderIcon from "../../pictures/blinkist_icon.png";
@@ -8,7 +8,6 @@ import SimpleHeaderButton from "../atoms/buttons/SimpleHeaderButton";
 import ExploreDialog from "./ExploreDialog";
 import SearchBox from "./SearchBox";
 import WindowContext from "./WindowContext";
-import { useCallback , useMemo} from "react";
 
 const useStyles = makeStyles((theme) => ({
   hideIcon: {
@@ -90,10 +89,10 @@ function BlinkistHeader(props) {
 
   const onSearchClick = useCallback(
     () => {
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById("sbox").style.display = "block";
-    setIsOpen(false);
-  },[]);
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("sbox").style.display = "block";
+      setIsOpen(false);
+    }, []);
 
   const onSearchClose = () => {
     document.getElementById("overlay").style.display = "none";
@@ -107,7 +106,7 @@ function BlinkistHeader(props) {
         <span className={classes.bigFontForHeader}>Blinkist</span>
       </HeaderButton>
       <HeaderButton onlinkclick={onSearchClick}>
-         <BsSearch/>
+        <BsSearch />
       </HeaderButton>
 
       <Box id="sbox" className={classes.searchBox}>

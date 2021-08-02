@@ -188,7 +188,7 @@ const BookCard = (props) => {
 
 BookCard.propTypes = {
   myLibrary: PropTypes.bool,
-  changeStatus : PropTypes.bool,
+  changeStatus: PropTypes.bool,
   onremove: PropTypes.func,
   onchangestate: PropTypes.func,
   onaddtolibrary: PropTypes.func,
@@ -204,7 +204,7 @@ BookCard.propTypes = {
 
 BookCard.defaultProps = {
   myLibrary: true,
-  changeStatus : true
+  changeStatus: true
 };
 
 export default BookCard;

@@ -4,7 +4,7 @@ import {
   InputAdornment,
   makeStyles,
   TextField,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
