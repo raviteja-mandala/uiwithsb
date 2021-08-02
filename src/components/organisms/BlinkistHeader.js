@@ -8,6 +8,10 @@ import SimpleHeaderButton from "../atoms/buttons/SimpleHeaderButton";
 import ExploreDialog from "./ExploreDialog";
 import SearchBox from "./SearchBox";
 import WindowContext from "./WindowContext";
+<<<<<<< HEAD
+=======
+import { useCallback, useMemo } from "react";
+>>>>>>> f8b758e120b42159981a3fe92531316fbe992f08
 
 const useStyles = makeStyles((theme) => ({
   hideIcon: {
