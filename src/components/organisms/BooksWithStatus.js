@@ -5,7 +5,7 @@ import BookCard from "./BookCard";
 import useBooksAxios from "./useBooksAxios";
 import WindowContext from "./WindowContext";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     marginTop: 10,
     flex: 1,
@@ -49,7 +49,7 @@ function BooksWithStatus() {
     };
     fetch("http://localhost:3000/userBooks/" + bk.id, requestOptions)
       .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         setBookArray([...bookArray.filter((item) => item.id !== bk.id)]);
       });
   };
@@ -75,7 +75,7 @@ function BooksWithStatus() {
     };
     fetch("http://localhost:3000/userBooks/" + bk.id, requestOptions)
       .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         setBookArray([...bookArray]);
       });
   };

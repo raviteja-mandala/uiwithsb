@@ -1,9 +1,10 @@
 import { Box, Button, Grid, makeStyles } from "@material-ui/core";
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CategoryWithIcon from "../molecules/CategoryWithIcon";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   dialogContent: {
     width: "100%",
     marginTop: 0,
@@ -170,5 +171,10 @@ function ExploreDialog(props) {
     </Box>
   );
 }
+
+ExploreDialog.propTypes = {
+  open: PropTypes.bool,
+  onclose: PropTypes.func
+};
 
 export default ExploreDialog;

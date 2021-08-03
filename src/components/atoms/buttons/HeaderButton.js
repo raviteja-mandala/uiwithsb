@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core";
+import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   hButton: {
     color: "black",
     padding: "5px 5px",
@@ -21,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HeaderButton(props) {
-  console.log('abc123--4');
   const classes = useStyles();
 
   const handleCloseLink = () => {
@@ -39,5 +39,12 @@ function HeaderButton(props) {
     </div>
   );
 }
+
+HeaderButton.propTypes = {
+  children: PropTypes.string,
+  state: PropTypes.bool,
+  tolink: PropTypes.string,
+  onlinkclick: PropTypes.func,
+};
 
 export default React.memo(HeaderButton);

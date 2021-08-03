@@ -94,7 +94,7 @@ const images = importAll(
 const BookCard = (props) => {
   const classes = useStyles(props)();
 
-  const [status, setStatus] = useState(() => {
+  const [status] = useState(() => {
     return "finished";
   });
 
@@ -168,18 +168,6 @@ const BookCard = (props) => {
           >
             Add to library
           </Button>
-          {/* <Button
-            id="removeFromLibrary"
-            onClick={() => changeStatusOfBook(props.onremove, props.book)}
-            variant="contained"
-            className={
-              props.myLibrary === true
-                ? classes.colorButton
-                : classes.hideButton
-            }
-          >
-            Remove from library
-          </Button> */}
         </Grid>
       </Grid>
     </Grid>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import BookCard from "./BookCard";
 import useBooksAxios from "./useBooksAxios";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     marginTop: 10,
     flex: 1,
@@ -26,14 +26,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ExploreBooks(props) {
+function ExploreBooks() {
   const url = "http://localhost:3000";
-  const [bookContext, setBookContext, error1, loading1] = useBooksAxios(
+  const [bookContext, setBookContext] = useBooksAxios(
     url + "/userBooks",
     "get"
   );
-  console.log("l-->" + JSON.stringify(bookContext));
-
   const [bookArray, setBookArray, error, loading] = useBooksAxios(
     url + "/books",
     "get"
@@ -67,8 +65,7 @@ function ExploreBooks(props) {
       <Box className={classes.secondSection}>All Books</Box>
       <Grid container className={classes.container}>
         {bookArray.map((book) => {
-          console.log("z--" + book.id + "cat " + category);
-          if (book.category === category) {  //&& !userBooks.includes(book.id)
+          if (book.category === category) {
             console.log("inside loop" + book.id);
             return (
               <Grid item xs={4}>

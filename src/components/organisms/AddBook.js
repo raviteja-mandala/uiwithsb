@@ -1,7 +1,7 @@
 import { Box, Button, Grid, makeStyles, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   formContainer: {
     marginTop: 100,
     marginLeft: 300,
@@ -53,11 +53,7 @@ function AddBook() {
   const validateForm = (userInput) => {
     let localErrors = {};
 
-    console.log("inside error1" + JSON.stringify(userInput));
-    if (userInput.hasOwnProperty("bookTitle")) {
-      console.log(
-        userInput.bookTitle.length + "inside error6" + userInput.bookTitle
-      );
+    if (Object.prototype.hasOwnProperty.call(userInput, "bookTitle")) {
       const bookTitleErrors = [];
       if (userInput.bookTitle.length < 3) {
         bookTitleErrors.push("Length is not sufficient.");
@@ -70,25 +66,25 @@ function AddBook() {
       }
       if (bookTitleErrors.length > 0) {
         localErrors = { ...errors };
-        if (localErrors.hasOwnProperty("submitError")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "submitError")) {
           delete localErrors.submitError;
         }
-        if (localErrors.hasOwnProperty("bookTitle")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "bookTitle")) {
           delete localErrors.bookTitle;
         }
         setErrors({ ...localErrors, bookTitle: bookTitleErrors });
       } else {
-        if (localErrors.hasOwnProperty("bookTitle")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "bookTitle")) {
           delete localErrors.bookTitle;
         }
-        if (localErrors.hasOwnProperty("submitError")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "submitError")) {
           delete localErrors.submitError;
         }
         setErrors({ ...localErrors });
       }
     }
 
-    if (userInput.hasOwnProperty("bookAuthor")) {
+    if (Object.prototype.hasOwnProperty.call(userInput, "bookAuthor")) {
       const bookAuthorErrors = [];
       for (const c of userInput.bookAuthor) {
         if (!/[a-zA-Z]/.test(c)) {
@@ -98,18 +94,18 @@ function AddBook() {
       }
       if (bookAuthorErrors.length > 0) {
         localErrors = { ...errors };
-        if (localErrors.hasOwnProperty("submitError")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "submitError")) {
           delete localErrors.submitError;
         }
-        if (localErrors.hasOwnProperty("bookAuthor")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "bookAuthor")) {
           delete localErrors.bookAuthor;
         }
         setErrors({ ...localErrors, bookAuthor: bookAuthorErrors });
       } else {
-        if (localErrors.hasOwnProperty("submitError")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "submitError")) {
           delete localErrors.submitError;
         }
-        if (localErrors.hasOwnProperty("bookAuthor")) {
+        if (Object.prototype.hasOwnProperty.call(localErrors, "bookAuthor")) {
           delete localErrors.bookAuthor;
         }
         setErrors({ ...localErrors });
@@ -117,7 +113,7 @@ function AddBook() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     let requiredFieldsNotEmpty = true;
     console.log(JSON.stringify(input) + "456");
     for (const k in input) {
@@ -160,8 +156,8 @@ function AddBook() {
               console.log(json);
               setSuccess(
                 "Book with title " +
-                  input.bookTitle +
-                  " is successfully created!"
+                input.bookTitle +
+                " is successfully created!"
               );
               setInput({ bookTitle: "", bookAuthor: "", category: "" });
             })

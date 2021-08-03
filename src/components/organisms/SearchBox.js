@@ -6,11 +6,12 @@ import {
   TextField,
   Typography
 } from "@material-ui/core";
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import useBooksAxios from "./useBooksAxios";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   inputText: {
     width: "100%",
   },
@@ -41,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 function SearchBox(props) {
   const classes = useStyles();
   const url = "http://localhost:3000/books";
-  const [bookArray, setBookArray, error, loading] = useBooksAxios(url, "get");
+  const [bookArray] = useBooksAxios(url, "get");
   const [input, setInput] = useState("");
   const a = props.onsearchclose;
 
@@ -99,5 +100,9 @@ function SearchBox(props) {
     </div>
   );
 }
+
+SearchBox.propTypes = {
+  onsearchclose: PropTypes.func,
+};
 
 export default SearchBox;

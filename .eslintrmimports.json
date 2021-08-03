@@ -1,4 +1,8 @@
 {
+    "plugins": [
+        "react",
+        "unused-imports"
+    ],
     "env": {
         "browser": true,
         "es2021": true
@@ -14,14 +18,7 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "unused-imports"
-    ],
     "rules": {
         "unused-imports/no-unused-imports": "error"
-    },
-    "ignorePatterns": [
-        "*"
-    ]
+    }
 }

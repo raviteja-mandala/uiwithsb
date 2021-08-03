@@ -1,7 +1,8 @@
 import { Grid, makeStyles } from "@material-ui/core";
+import PropTypes from "prop-types";
 import React from "react";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   templateContainer: {
     display: "flex",
     flexDirection: "column",
@@ -13,13 +14,12 @@ const useStyles = makeStyles((theme) => ({
       props.dimensions.width > 1110 ? props.dimensions.height / 9 : "auto",
   }),
 
-  body: (props) => ({
+  body: {
     flexGrow: 1,
-  }),
+  }
 }));
 
 function MainTemplate(props) {
-  console.log("abc " + props.dimensions.height);
   const classes = useStyles(props);
 
   return (
@@ -33,5 +33,14 @@ function MainTemplate(props) {
     </Grid>
   );
 }
+
+MainTemplate.propTypes = {
+  header: PropTypes.element.isRequired,
+  body: PropTypes.element.isRequired,
+  dimensions: PropTypes.exact({
+    height: PropTypes.number,
+    width: PropTypes.number
+  }),
+};
 
 export default MainTemplate;

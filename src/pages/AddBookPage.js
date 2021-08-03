@@ -9,7 +9,6 @@ import theme from "../themes/theme";
 
 function AddBookPage() {
   const dimensions = useWindowSize({});
-  //const dimensions = {width : 1350 , height : 600};//useWindowSize({});
   console.log("width -->" + dimensions.width + "height-->" + dimensions.height);
   return (
     <React.Fragment>

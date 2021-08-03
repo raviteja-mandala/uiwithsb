@@ -68,6 +68,7 @@ BookStatusButton.propTypes = {
   state: PropTypes.string,
   buttonStyles: PropTypes.string,
   buttonContainerStyles: PropTypes.string,
+  clickfunc: PropTypes.func,
 };
 
 export default BookStatusButton;
