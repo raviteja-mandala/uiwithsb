@@ -32,7 +32,7 @@ function ExploreBooks() {
     url + "/userBooks",
     "get"
   );
-  const [bookArray, setBookArray, error, loading] = useBooksAxios(
+  const bookArray = useBooksAxios(
     url + "/books",
     "get"
   );
@@ -49,24 +49,21 @@ function ExploreBooks() {
     })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         const localBookArray = [...bookContext];
         localBookArray.push(bk);
-        console.log(localBookArray);
         setBookContext(localBookArray);
       })
       .catch((err) => console.log(err));
   };
   const userBooks = bookContext.map((book) => book.id);
-  return loading ? (
+  return bookArray[3] ? (
     <p>loading...</p>
-  ) : bookArray !== null ? (
+  ) : bookArray[0] !== null ? (
     <Box className={classes.blinkistbody}>
       <Box className={classes.secondSection}>All Books</Box>
       <Grid container className={classes.container}>
-        {bookArray.map((book) => {
+        {bookArray[0].map((book) => {
           if (book.category === category) {
-            console.log("inside loop" + book.id);
             return (
               <Grid item xs={4}>
                 <BookCard
@@ -84,7 +81,7 @@ function ExploreBooks() {
       </Grid>
     </Box>
   ) : (
-    error
+    bookArray[2]
   );
 }
 

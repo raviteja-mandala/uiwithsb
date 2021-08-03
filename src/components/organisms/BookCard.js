@@ -98,8 +98,8 @@ const BookCard = (props) => {
     return "finished";
   });
 
-  const changeStatusOfBook = (a, b) => {
-    a(b);
+  const changeStatusOfBook = (parentFunction, bookParam) => {
+    parentFunction(bookParam);
   };
 
   useEffect(() => {

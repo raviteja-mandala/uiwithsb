@@ -90,7 +90,7 @@ function ExploreDialog(props) {
   const [categories, setCategories] = useState(() => {
     return [];
   });
-  const [allBooks, setAllBooks] = useState(() => {
+  const allBooks = useState(() => {
     return [];
   });
   const refresh = props.open;
@@ -109,7 +109,7 @@ function ExploreDialog(props) {
           allBooksArray.push(book);
         });
         setCategories([...new Set(categoriesArray)]);
-        setAllBooks([...allBooksArray]);
+        allBooks[1]([...allBooksArray]);
       });
   };
 
