@@ -4,6 +4,34 @@ import Person from "@material-ui/icons/Person";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import BookDetailWithIcon from "../molecules/BookDetailWithIcon";
+import book_image1 from "../../pictures/book_image1.png";
+import book_image2 from "../../pictures/book_image2.png";
+import book_image3 from "../../pictures/book_image3.png";
+import book_image4 from "../../pictures/book_image4.png";
+import book_image5 from "../../pictures/book_image5.png";
+
+const retImage = (image) => {
+  switch (image) {
+    case 'book_image1.png':
+      return book_image1
+      break;
+    case 'book_image2.png':
+      return book_image2
+      break;
+    case 'book_image3.png':
+      return book_image3
+      break;
+    case 'book_image4.png':
+      return book_image4
+      break;
+    case 'book_image5.png':
+      return book_image5
+      break;
+    default:
+      return book_image1
+      break;
+  }
+}
 
 const useStyles = (props) =>
   makeStyles((theme) => ({
@@ -32,11 +60,11 @@ const useStyles = (props) =>
     },
 
     hideButton: {
-      display: "none",
+      display: 'none',
     },
 
     cardContainerFirstChild: {
-      backgroundImage: "url(" + images[`${props.book.image}`].default + ")", //${props.book.location}
+      backgroundImage: "url(" + retImage(`${props.book.image}`) + ")", //"url(" + images[`${props.book.image}`].default + ")" `${props.book.image}`
       backgroundRepeat: "no-repeat",
       backgroundSize: "100% 100%",
       height: "60%",
@@ -87,11 +115,13 @@ function importAll(r) {
   return images;
 }
 
-const images = importAll(
-  require.context("../../pictures", false, /\.(png|jpe?g|svg)$/)
-);
+// const images = importAll(
+//   require.context("../../pictures", false, /\.(png|jpe?g|svg)$/)
+// );
 
 const BookCard = (props) => {
+  console.log('props.changeStatus ->'+props.changeStatus);
+  console.log('props.myLibrary ->'+props.myLibrary);
   const classes = useStyles(props)();
 
   const [status] = useState(() => {
@@ -146,6 +176,7 @@ const BookCard = (props) => {
         >
           <Button
             id="changeStatus"
+            data-testid={props.book.id}
             onClick={() => changeStatusOfBook(props.onchangestate, props.book)}
             variant="contained"
             className={

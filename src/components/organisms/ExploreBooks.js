@@ -54,8 +54,9 @@ function ExploreBooks() {
         setBookContext(localBookArray);
       })
       .catch((err) => console.log(err));
-  };
+  };console.log('34x-->'+bookContext);
   const userBooks = bookContext.map((book) => book.id);
+  console.log('57x-->'+userBooks+'cat '+category);
   return bookArray[3] ? (
     <p>loading...</p>
   ) : bookArray[0] !== null ? (
@@ -66,7 +67,7 @@ function ExploreBooks() {
           if (book.category === category) {
             return (
               <Grid item xs={4}>
-                <BookCard
+                <BookCard 
                   book={book}
                   onaddtolibrary={(bk) => {
                     addBookToLibrary(bk);

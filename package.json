@@ -7,9 +7,10 @@
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^5.0.0-beta.1",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "babel-plugin-require-context-hook": "^1.0.0",
+    "babel-plugin-transform-require-context": "^0.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -57,14 +58,19 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
     "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/node-logger": "^6.3.6",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.6",
+    "@testing-library/jest-native": "^4.0.2",
+    "@testing-library/react": "^11.2.7",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-unused-imports": "^1.1.2"
+    "eslint-plugin-unused-imports": "^1.1.2",
+    "jest-dom": "^4.0.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
