@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --silent --coverage",
+    "test": "react-scripts test --silent",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext js,jsx",
     "jtest": "jest --coverage",
