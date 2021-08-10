@@ -3,12 +3,12 @@ import AccessTime from "@material-ui/icons/AccessTime";
 import Person from "@material-ui/icons/Person";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
-import BookDetailWithIcon from "../molecules/BookDetailWithIcon";
 import book_image1 from "../../pictures/book_image1.png";
 import book_image2 from "../../pictures/book_image2.png";
 import book_image3 from "../../pictures/book_image3.png";
 import book_image4 from "../../pictures/book_image4.png";
 import book_image5 from "../../pictures/book_image5.png";
+import BookDetailWithIcon from "../molecules/BookDetailWithIcon";
 
 const retImage = (image) => {
   switch (image) {
@@ -107,21 +107,9 @@ const useStyles = (props) =>
     },
   }));
 
-function importAll(r) {
-  const images = {};
-  r.keys().forEach((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
-
-// const images = importAll(
-//   require.context("../../pictures", false, /\.(png|jpe?g|svg)$/)
-// );
-
 const BookCard = (props) => {
-  console.log('props.changeStatus ->'+props.changeStatus);
-  console.log('props.myLibrary ->'+props.myLibrary);
+  console.log('props.changeStatus ->' + props.changeStatus);
+  console.log('props.myLibrary ->' + props.myLibrary);
   const classes = useStyles(props)();
 
   const [status] = useState(() => {

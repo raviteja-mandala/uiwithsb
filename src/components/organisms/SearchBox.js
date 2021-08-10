@@ -44,10 +44,9 @@ function SearchBox(props) {
   const url = "http://localhost:3000/books";
   const [bookArray] = useBooksAxios(url, "get");
   const [input, setInput] = useState("");
-  const a = props.onsearchclose;
+  const closeSearch = props.onsearchclose;
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setInput(e.target.value);
   };
   return (
@@ -65,7 +64,7 @@ function SearchBox(props) {
                   <MdClose
                     className={classes.closeIcon}
                     onClick={() => {
-                      a();
+                      closeSearch();
                     }}
                   ></MdClose>{" "}
                 </InputAdornment>

@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test explore dialog 1 1`] = `
+exports[`Test explore dialog which displays all categories. Check whether category is displayed.  1`] = `
 <div
-  className="MuiBox-root MuiBox-root-31 makeStyles-exploreTable-21"
+  className="MuiBox-root MuiBox-root-19 makeStyles-exploreTable-6"
 >
   <div
-    className="MuiBox-root MuiBox-root-32 makeStyles-tableContainer-23"
+    className="MuiBox-root MuiBox-root-20 makeStyles-tableContainer-8"
   >
     <div
       className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
     >
       <div
-        className="MuiBox-root MuiBox-root-33"
+        className="MuiBox-root MuiBox-root-21"
       >
          
         <div
@@ -21,7 +21,7 @@ exports[`test explore dialog 1 1`] = `
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-24"
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
               disabled={false}
               onBlur={[Function]}
               onDragLeave={[Function]}
@@ -48,7 +48,7 @@ exports[`test explore dialog 1 1`] = `
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-24"
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
               disabled={false}
               onBlur={[Function]}
               onDragLeave={[Function]}
@@ -75,7 +75,7 @@ exports[`test explore dialog 1 1`] = `
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-24"
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
               disabled={false}
               onBlur={[Function]}
               onDragLeave={[Function]}

@@ -133,8 +133,6 @@ function AddBook() {
             bookIds.push(book.id);
           });
           maxBookId = Math.max(...bookIds) + 1;
-          console.log("bids" + bookIds);
-          console.log("maxBookId" + maxBookId);
         })
         .then(
           fetch("http://localhost:3000/books", {
@@ -175,7 +173,9 @@ function AddBook() {
   const handleChange = (e) => {
     let localInput = {};
     const attrName = e.target.name;
+    console.log(attrName);
     const attrValue = e.target.value;
+    console.log(attrValue);
     localInput = { [attrName]: attrValue };
     setSuccess(null);
     setInput({ ...input, [attrName]: attrValue });
@@ -195,8 +195,8 @@ function AddBook() {
               error={"bookTitle" in errors}
               required
               id="outlined-helperText"
-              name="bookTitle"
-              label="Book Title"
+              name = "bookTitle"
+              label = "Book Title"
               value={input.bookTitle}
               helperText={errors.bookTitle}
               variant="outlined"
@@ -207,8 +207,8 @@ function AddBook() {
             <TextField
               required
               id="outlined-helperText"
-              label="Author"
-              name="bookAuthor"
+              label = "Author"
+              name = "bookAuthor"
               variant="outlined"
               value={input.bookAuthor}
               helperText={errors.bookAuthor}
@@ -220,15 +220,15 @@ function AddBook() {
             <TextField
               required
               id="outlined-helperText"
-              label="Category"
-              name="category"
+              label = "Category"
+              name = "category"
               value={input.category}
               variant="outlined"
               onChange={handleChange}
             />
           </Grid>
           <Grid item>
-            <Button color="primary" variant="contained" onClick={handleSubmit}>
+            <Button data-testid="addBook" color="primary" variant="contained" onClick={handleSubmit}>
               ADD BOOK
             </Button>
           </Grid>

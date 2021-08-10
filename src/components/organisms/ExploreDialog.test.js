@@ -1,21 +1,18 @@
 import {
-    render,
-    screen
-} from '@testing-library/react';
+    cleanup, render,
+    screen, waitForElementToBeRemoved
+} from '@testing-library/react/pure';
+import userEvent from '@testing-library/user-event';
+import axios from "axios";
+import { BrowserRouter, MemoryRouter, Route } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { BrowserRouter } from 'react-router-dom';
+import ExploreBooks from './ExploreBooks';
 import ExploreDialog from './ExploreDialog';
 
-// beforeEach(() => {
-//     jest.spyOn(global, 'fetch').mockResolvedValue({
-//         json: jest.fn().mockResolvedValue(books)
-//     })
-// });
 
-test('test explore dialog ', async () => {
-
-    const books = [{
-
+describe("Test explore dialog which displays all categories.", () => {
+    cleanup();
+    var books = [{
         "id": 6,
         "bookTitle": "Zoology",
         "bookAuthor": "Vikram",
@@ -23,36 +20,38 @@ test('test explore dialog ', async () => {
         "reads": "0.7k",
         "image": "book_image1.png",
         "category": "Medicine"
-
     }];
 
     const mockFetchMethod = jest.spyOn(global, 'fetch').mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(books) }));
-    render(<BrowserRouter><ExploreDialog open={true} onclose={() => { }} /></BrowserRouter>);
-    const myElement = await screen.findByText(/Medicine/i);
-    expect(myElement).toBeInTheDocument();
-    mockFetchMethod.mockRestore;
-});
+    render(<MemoryRouter initialEntries={["/explore/Medicine"]}
+        initialIndex={0}> <ExploreDialog open={true} onclose={() => { }} /><Route path="/explore/:category" component={ExploreBooks}>
+        </Route></MemoryRouter>);
+    test('Check whether category is displayed. ', async () => {
+        const myElement = await screen.findByText(/Medicine/i);
+        expect(myElement).toBeInTheDocument();
+        const tree = renderer.create((<BrowserRouter><ExploreDialog open={true} onclose={() => { }} /></BrowserRouter>)).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 
-
-test('test explore dialog 1', async () => {
-
-    const books = [
-        {
-            "id": 3,
-            "bookTitle": "Fluid Mechanics",
-            "bookAuthor": "Rohan",
-            "min": 42,
-            "reads": "1.2k",
-            "image": "book_image3.png",
-            "category": "Science"
-        },
-    ];
-    const mockFetchMethod = jest.spyOn(global, 'fetch').mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(books) }));
-    render(<BrowserRouter><ExploreDialog open={true} onclose={() => { }} /></BrowserRouter>);
-    const myElement = await screen.findByText(/Science/i);
-    expect(myElement).toBeInTheDocument();
-    mockFetchMethod.mockRestore;
-
-    const tree = renderer.create((<BrowserRouter><ExploreDialog open={true} onclose={() => { }} /></BrowserRouter>)).toJSON();
-    expect(tree).toMatchSnapshot();
+    test('Check whether click on category will display Explore books page. ', async () => {
+        const mockFetchMethod = jest.spyOn(global, 'fetch').mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(books) }));
+        jest.mock('axios');
+        axios.get = jest.fn().mockImplementation((url) => {
+            switch (url) {
+                case 'http://localhost:3000/books':
+                    return Promise.resolve({ data: books });
+                    break;
+                case 'http://localhost:3000/userBooks':
+                    return Promise.resolve({ data: books });
+                    break;
+                default:
+                    return Promise.reject(new Error('not found'));
+                    break;
+            }
+        });
+        userEvent.click(screen.getByText(/Medicine/i));
+        await waitForElementToBeRemoved(() => screen.getByText('loading...'));
+        const myElement = await screen.findByText(/Zoology/i);
+        expect(myElement).toBeInTheDocument();
+    });
 });
