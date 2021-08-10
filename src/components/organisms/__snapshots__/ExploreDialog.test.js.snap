@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test explore dialog which displays all categories. Check whether category is displayed.  1`] = `
+<div
+  className="MuiBox-root MuiBox-root-19 makeStyles-exploreTable-6"
+>
+  <div
+    className="MuiBox-root MuiBox-root-20 makeStyles-tableContainer-8"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-21"
+      >
+         
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-item"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
+              disabled={false}
+              onBlur={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                Explore by category
+              </span>
+            </button>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
+              disabled={false}
+              onBlur={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                See recently added titles
+              </span>
+            </button>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-exploreHeaderTitles-9"
+              disabled={false}
+              onBlur={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                See popular titles
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-item"
+      />
+    </div>
+  </div>
+</div>
+`;

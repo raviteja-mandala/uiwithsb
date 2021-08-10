@@ -1,0 +1,13 @@
+body {
+  width : 50%;
+  margin: 0 auto;
+  font-family: Raleway;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  
+}
+
+#root{
+  width : 100%;
+}
