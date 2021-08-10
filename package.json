@@ -25,7 +25,7 @@
     "test": "react-scripts test --silent",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext js,jsx",
-    "jtest": "jest --coverage",
+    "coverage": "react-scripts test --watchAll=false --silent --coverage",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -77,21 +77,10 @@
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-unused-imports": "^1.1.2",
+    "jest": "^27.0.6",
     "jest-dom": "^4.0.0",
     "jest-sonar-reporter": "^2.0.0",
     "react-hot-loader": "^4.13.0",
     "react-test-renderer": "^17.0.2"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "babel-jest"
-    },
-    "testResultsProcessor": "jest-sonar-reporter",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ]
   }
 }
