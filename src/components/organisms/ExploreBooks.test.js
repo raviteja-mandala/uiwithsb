@@ -59,13 +59,10 @@ describe("Test Explore books.", () => {
             switch (url) {
                 case 'http://localhost:3000/books':
                     return Promise.resolve({ data: books });
-                    break;
                 case 'http://localhost:3000/userBooks':
                     return Promise.resolve({ data: userBooks });
-                    break;
                 default:
                     return Promise.reject(new Error('not found'));
-                    break;
             }
         });
         render(<MemoryRouter initialEntries={["/explore/Indoor Sports"]}
@@ -116,13 +113,10 @@ describe("Test Explore books.", () => {
             switch (url) {
                 case 'http://localhost:3000/books':
                     return Promise.resolve({ data: books });
-                    break;
                 case 'http://localhost:3000/userBooks':
                     return Promise.resolve({ data: userBooks });
-                    break;
                 default:
                     return Promise.reject(new Error('not found'));
-                    break;
             }
         });
         const mockFetchMethod = jest.spyOn(global, 'fetch').mockImplementation(() => Promise.resolve({ json: () => Promise.resolve(updatedBook) }));

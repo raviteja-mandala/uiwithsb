@@ -14,22 +14,16 @@ const retImage = (image) => {
   switch (image) {
     case 'book_image1.png':
       return book_image1
-      break;
     case 'book_image2.png':
       return book_image2
-      break;
     case 'book_image3.png':
       return book_image3
-      break;
     case 'book_image4.png':
       return book_image4
-      break;
     case 'book_image5.png':
       return book_image5
-      break;
     default:
       return book_image1
-      break;
   }
 }
 

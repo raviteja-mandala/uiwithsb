@@ -40,13 +40,10 @@ describe("Test explore dialog which displays all categories.", () => {
             switch (url) {
                 case 'http://localhost:3000/books':
                     return Promise.resolve({ data: books });
-                    break;
                 case 'http://localhost:3000/userBooks':
                     return Promise.resolve({ data: books });
-                    break;
                 default:
                     return Promise.reject(new Error('not found'));
-                    break;
             }
         });
         userEvent.click(screen.getByText(/Medicine/i));
