@@ -31,7 +31,7 @@ describe('Test Add book page.', () => {
         }
     ];
     render(<AddBook />);
-    test("provide invalid book title, check for error", async () => {
+    test("provide invalid book title, check for error.", async () => {
         userEvent.type(screen.getByText('Book Title'), 'Java1.2');
         const errorElement = screen.getByText(/Title should contain only alphabets./i);
         expect(errorElement).toBeInTheDocument();
