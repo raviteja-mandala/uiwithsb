@@ -19,7 +19,7 @@ jobs:
         run: npm i -g jest
         # working-directory: "./frontend-project"
       - name: Run Tests
-        run: npm run test:ci
+        run: jest -u --config ./jest.config.js --coverage
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
