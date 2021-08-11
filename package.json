@@ -25,7 +25,7 @@
     "test": "react-scripts test --silent",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext js,jsx",
-    "coverage": "react-scripts test --watchAll=false --silent --coverage",
+    "coverage": "react-scripts test --watchAll=false --silent --coverage --testResultsProcessor jest-sonar-reporter",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -56,6 +56,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": ".",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
